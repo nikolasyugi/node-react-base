@@ -1,0 +1,23 @@
+doctype html
+html
+    head
+        block head
+            meta(charset="utf-8")
+            meta(name="viewport", content="width=device-width")
+            meta(htpp-equiv="X-UA-Compatible", content="IE=edge")
+        style
+            include style.css
+            
+    body
+        #pageWrapper
+            h1 Sistema Admin
+            p.normal
+                | Olá 
+                b #{name}! 
+                | Você solicitou a reinicialização da sua senha no 
+                b Sistema Admin. 
+                | Infelizmente não encontramos um usuário no sistema cadastrado com o seu e-mail!
+            a(href=`${keys.webUrl}` target='_blank')
+                button Cadastre-se já!
+            p.footer Caso necessite de ajuda, entre em contato através do número 
+                span 11 9 4123 4123

@@ -1,0 +1,53 @@
+#page-bk {
+    background-image: url('../assets/background-img.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login-body {
+    min-width: 450px;
+}
+
+#login-body h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#forgot {
+    color: #999;
+    font-size: 12px;
+    float: right;
+}
+
+#forgot:hover {
+    color: var(--primary) !important;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.modalContent .inputWrapper {
+    margin: 15px 0;
+}
+
+.rodal-dialog {
+    max-width: 450px;
+}
+
+@media only screen and (max-width:465px) {
+    #login-body {
+        width: 80%;
+        min-width: 80%;
+    }
+    .rodal-dialog {
+        max-width: 80%;
+        max-height: 350px;
+    }
+    .modalContent .inputWrapper {
+        margin: 0;
+    }
+}

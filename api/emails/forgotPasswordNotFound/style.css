@@ -1,0 +1,56 @@
+body {
+    background: #17cf97;
+}
+
+#pageWrapper {
+    font-family: sans-serif;
+    width: 70%;
+    padding: 50px 0;
+    margin: 0 auto;
+    text-align: center;
+    min-height: 95vh;
+    box-sizing: border-box;
+    color: #ffffff;
+}
+
+img {
+    width: 25%;
+    padding-left: 5%;
+}
+
+.normal {
+    margin: 45px 5px;
+    font-size: 14px;
+}
+
+a {
+    cursor: pointer;
+}
+
+button {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    width: 100%;
+    outline: none;
+    color: #17cf97;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+}
+
+.footer {
+    font-size: 10px;
+    margin-top: 50px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer span {
+    color: white;
+    font-weight: bold;
+}

@@ -1,0 +1,18 @@
+.recharts-bar-rectangle path {
+    fill: var(--primary);
+    opacity: 0.3;
+}
+
+#chartWrapper {
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    .recharts-responsive-container {
+        min-width: 400px !important;
+    }
+    #chartWrapper {
+    overflow-x: scroll;
+
+    }
+}

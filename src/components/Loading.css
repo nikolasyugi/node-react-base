@@ -1,0 +1,10 @@
+.loadingWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: inherit;
+}
+
+.loadingWrapper svg {
+    color:var(--primary);
+}

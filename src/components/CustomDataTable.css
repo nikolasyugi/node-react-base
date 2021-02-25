@@ -1,0 +1,50 @@
+#tableWrapper {
+    display: flex;
+    overflow-x: auto;
+    flex-direction: column;
+}
+
+#tableWrapper label {
+    align-self: flex-end;
+}
+
+#tableWrapper input {
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+#tableWrapper input:focus {
+    border: 1px solid var(--primary);
+}
+
+.customTable {
+    overflow-y: visible !important;
+    overflow-x: visible !important;
+}
+
+.rdt_Table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.rdt_TableHeadRow {
+    border-bottom: 1px solid black !important;
+    background-color: #f2f2f2 !important;
+}
+
+.rdt_Pagination {
+    background-color: white !important;
+    border: none !important;
+    color: black;
+    margin-top: 5px;
+}
+
+#pagination-previous-page:hover, #pagination-next-page:hover, #pagination-first-page:hover, #pagination-last-page:hover {
+    background-color: rgba(0, 0, 0, 0.12) !important;
+}

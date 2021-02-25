@@ -1,0 +1,38 @@
+/* MODALS */
+
+.modalBody {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px 15px 15px 15px;
+}
+
+.modalHeader, .modalContent, .modalButtons {
+    margin: 10px 0;
+}
+
+.modalBody img {
+    max-width: 50px;
+    margin-bottom: 5px;
+}
+
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modalTitle {
+    text-transform: uppercase;
+}
+
+.modalButtons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.modalButtons button {
+    width: 100%;
+    margin: 15px;
+}
