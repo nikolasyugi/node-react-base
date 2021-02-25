@@ -2,6 +2,7 @@ const User = require('../models/User');
 const handle = require('../lib/errorHandling')().handle;
 const s3Helper = require('../lib/s3Helper');
 const checkFields = require('../lib/checkFields');
+const dayjs = require('dayjs');
 
 module.exports = {
 
@@ -94,5 +95,35 @@ module.exports = {
             if (!error1) res.json({});
             else next(error1);
         })
-    }
+    },
+
+    async chart(req, res, next) {
+
+        const from = dayjs().subtract(1, 'month').startOf('day')
+        const to = dayjs().endOf('day')
+        const timeSpan = to.diff(from, 'days')
+
+        let [users, error] = await handle(User.find({ $and: [{ createdAt: { $gte: from } }, { createdAt: { $lte: to } }, { role: { $ne: "admin" } }] }))
+        if (error) next(error);
+
+        let formattedArray = [];
+        let totalUsers = 0;
+        console.log(users)
+
+        for (i = 0; i <= timeSpan; i++) {
+
+            let currentDate = from.add(i, 'days');
+            let currentUsers = users.filter(user => dayjs(user.createdAt).startOf('day').diff(currentDate, 'days') == 0).length
+
+            totalUsers += currentUsers;
+
+            formattedArray.push({
+                ["date"]: currentDate.format("DD/MM/YY"),
+                ["Total"]: totalUsers,
+                ["Usuários"]: currentUsers,
+            })
+        }
+
+        res.json(formattedArray);
+    },
 }

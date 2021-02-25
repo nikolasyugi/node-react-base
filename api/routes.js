@@ -20,6 +20,7 @@ routes.post('/api/resetPassword', authController.resetPassword)
 
 //User controller
 routes.get('/api/users', middlewares.checkToken, middlewares.checkAdmin, userController.getUsers)
+routes.get('/api/users/chart', middlewares.checkToken, middlewares.checkAdmin, userController.chart)
 routes.get('/api/users/:userId', middlewares.checkToken, middlewares.checkAdmin, userController.getUser)
 routes.post('/api/users', middlewares.checkToken, middlewares.checkAdmin, upload.single('picture'), userController.createUser)
 routes.put('/api/users', middlewares.checkToken, middlewares.checkAdmin, upload.single('picture'), userController.updateUser)
