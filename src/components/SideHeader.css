@@ -64,7 +64,7 @@ div .logo-content img {
 }
 
 #logo-box img {
-    height: 100px;
+    height: 70px;
     margin: 0px auto;
     display: block;
     width: auto;
@@ -74,6 +74,9 @@ div .logo-content img {
 #logo-box {
     background: #fff;
     height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 li span {
