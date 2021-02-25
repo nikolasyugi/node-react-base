@@ -8,7 +8,6 @@ const UserSchema = new mongoose.Schema({
     birthday: Date,
     phone: String,
     role: String, //"admin" or null 
-    meetings_attended: [{ type: mongoose.Schema.ObjectId, ref: 'Meeting' }],
     password: {
         type: String, required: true, validate: {
             validator: function (p) {
