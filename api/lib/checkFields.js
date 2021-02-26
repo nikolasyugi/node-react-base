@@ -16,14 +16,14 @@ function checkFields(fields, object) {
     }
     returns false
     */
-   if (!fields.length) {
-       return true
+    if (!fields.length) {
+        return true
     } else if (Object.keys(object).length === 0) {
         return false
     } else {
         var field = fields.pop()
 
-        if (object[field] === null) { //Already checks integers, floats and booleans
+        if (object[field] === null || object[field] === undefined || object[field] === 'null' || object[field] === 'undefined') { //Already checks integers, floats and booleans
             return false
         } else if (typeof object[field] == "string" && !object[field]) { //String
             return false
