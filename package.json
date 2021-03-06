@@ -2,7 +2,6 @@
   "name": "node-react-base",
   "version": "0.1.0",
   "private": true,
-  "homepage": "./",
   "author": "Nikolas Athanasopoulos",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
