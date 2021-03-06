@@ -12,7 +12,9 @@ module.exports = {
 
     async sign_in(req, res, next) {
 
-        let [userFound, err] = await handle(User.findOne({ email: req.body.email }))
+        if (!checkFields(["email", "password"], req.body)) return res.status(400).json({ message: "Preencha todos os campos" })
+
+        let [userFound, err] = await handle(User.findOne({ email: req.body.email }).orFail())
         if (err) next(err);
         else if (!userFound) return res.status(404).json({ message: "Usuário não encontrado" });
         else if (!userFound.verifyPassword(req.body.password)) return res.status(400).json({ message: "Senha inválida" });
