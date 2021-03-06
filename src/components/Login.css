@@ -31,11 +31,7 @@
 }
 
 .modalContent .inputWrapper {
-    margin: 15px 0;
-}
-
-.rodal-dialog {
-    max-width: 450px;
+    margin: 5px 0;
 }
 
 @media only screen and (max-width:465px) {
@@ -43,11 +39,10 @@
         width: 80%;
         min-width: 80%;
     }
-    .rodal-dialog {
-        max-width: 80%;
-        max-height: 350px;
-    }
     .modalContent .inputWrapper {
         margin: 0;
+    }
+    .modalBody {
+        padding: 5px 0 0 0;
     }
 }
