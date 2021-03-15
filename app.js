@@ -52,14 +52,13 @@ app.use(require('./api/routes'))
 
 app.use(express.static(path.join(__dirname, 'build')))
 
+app.use('/api/*', (req, res, next) => {
+    errorHandling.routeNotFound(next);
+});
 
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
-
-app.use((req, res, next) => {
-    errorHandling.routeNotFound(next);
-});
 
 app.use((err, req, res, next) => {
     errorHandling.throwError(err, res)
