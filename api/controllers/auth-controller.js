@@ -5,7 +5,7 @@ const keys = require('../keys')();
 const UIDGenerator = require('uid-generator');
 const uidgen = new UIDGenerator();
 const mailer = require('../emails/mailer');
-var jwt = require("jwt-simple");
+var jwt = require("jsonwebtoken");
 const checkFields = require('../lib/checkFields');
 
 module.exports = {
@@ -18,7 +18,7 @@ module.exports = {
         if (err) next(err);
         else if (!userFound) return res.status(404).json({ message: "Usuário não encontrado" });
         else if (!userFound.verifyPassword(req.body.password)) return res.status(400).json({ message: "Senha inválida" });
-        else return res.json({ name: userFound.name, email: userFound.email, token: jwt.encode(userFound._id, keys.jwtSecret) });;
+        else return res.json({ user: userFound, token: jwt.sign({ sub: userFound._id, iat: Math.floor(Date.now() / 1000) }, keys.jwtSecret, { expiresIn: "1h" }) });
     },
 
     async changePassword(req, res) {//change admin password

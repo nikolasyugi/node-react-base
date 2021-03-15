@@ -10,7 +10,7 @@ module.exports = (User, passport, keys) => {
 
 	passport.use(new JwtStrategy(opts,
 		(jwt_payload, done) => {
-			User.findById(jwt_payload, (err, userFound) => {
+			User.findById(jwt_payload.sub, (err, userFound) => {
 				if (err) { 
 					return done(err, null); }
 				if (!userFound) {return done(null, false, { message: "Usuário não encontrado" }); }
